@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		@apply scroll-smooth antialiased;
+	}
+
+	/* Nord theme inspired syntax highlighting */
+	pre {
+		@apply rounded-lg border border-zinc-800 bg-zinc-900/50 p-4;
+	}
+
+	code {
+		@apply rounded bg-zinc-800 px-1 py-0.5 text-sm;
+	}
+
+	pre code {
+		@apply block bg-transparent p-0;
+	}
+
+	/* Custom scrollbar */
+	::-webkit-scrollbar {
+		@apply w-2;
+	}
+
+	::-webkit-scrollbar-track {
+		@apply bg-zinc-900;
+	}
+
+	::-webkit-scrollbar-thumb {
+		@apply rounded-full bg-zinc-700;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		@apply bg-zinc-600;
+	}
+}
