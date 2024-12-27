@@ -44,13 +44,13 @@ MDSvex supports all standard Markdown features plus some extras:
 - **Frontmatter** for metadata
 - **Custom components** within Markdown
 
-### LaTeX Support
+### Math Support
 
-You can even include LaTeX equations:
+You can include mathematical equations using KaTeX or MathJax (once configured):
 
-$$
-f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
-$$
+```math
+f(x) = \int_{-\infty}^{\infty} \hat{f}(\xi) e^{2\pi i\xi x} d\xi
+```
 
 ## Conclusion
 

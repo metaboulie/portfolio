@@ -12,8 +12,10 @@ const config = {
 			extensions: ['.md', '.svx'],
 			highlight: {
 				highlighter(code, lang = 'text') {
-					const html = `<pre class="language-${lang}"><code>${code}</code></pre>`;
-					return html;
+					if (lang === 'math') {
+						return `<div class="math-block">${code}</div>`;
+					}
+					return `<pre class="language-${lang}"><code>${code}</code></pre>`;
 				}
 			}
 		})
