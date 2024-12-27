@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+	import { base } from '$app/paths';
 	export let data: PageData;
 </script>
 
@@ -17,7 +18,7 @@
 
 	<div class="mt-16 text-center">
 		<a
-			href="/blog"
+			href="{base}/blog"
 			class="inline-block rounded-lg border border-emerald-500 px-6 py-2 text-emerald-400 transition-all hover:bg-emerald-500 hover:text-zinc-900"
 		>
 			← Back to Blog

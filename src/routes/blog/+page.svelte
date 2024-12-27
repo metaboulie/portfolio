@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+	import { base } from '$app/paths';
 	export let data: PageData;
 </script>
 
@@ -18,7 +19,7 @@
 					})}</time
 				>
 				<h2 class="mt-4 text-2xl font-semibold group-hover:text-emerald-400">
-					<a href="/blog/{post.slug}">{post.title}</a>
+					<a href="{base}/blog/{post.slug}">{post.title}</a>
 				</h2>
 				<p class="mt-2 text-zinc-400">{post.description}</p>
 			</article>

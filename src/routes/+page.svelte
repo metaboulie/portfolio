@@ -1,15 +1,32 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { base } from '$app/paths';
 
 	let mounted = false;
 	onMount(() => {
 		mounted = true;
 	});
+
+	const links = [
+		{ title: 'Music', icon: '🎵', href: 'https://bandcamp.com/metaboulie' },
+		{ title: 'Movies', icon: '🎬', href: 'https://letterboxd.com/metaboulie' },
+		{ title: 'Gaming', icon: '🎮', href: 'https://steamcommunity.com/id/metaboulie' },
+		{ title: 'Social', icon: '💭', href: 'https://bsky.app/profile/metaboulie' }
+	];
 </script>
 
 <!-- Hero Section -->
 <section class="relative -mt-24 flex min-h-screen items-center justify-center overflow-hidden">
 	<div class="relative z-10 max-w-4xl text-center">
+		<div class="mb-8 flex justify-center">
+			<img
+				src="{base}/avatar.png"
+				alt="Eugene's avatar"
+				class="h-32 w-32 rounded-full border-2 border-zinc-800"
+				width="128"
+				height="128"
+			/>
+		</div>
 		<h1
 			class="mb-6 bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-6xl font-bold text-transparent transition-all duration-500"
 			class:translate-y-0={mounted}
@@ -35,7 +52,7 @@
 <!-- Links Section -->
 <section class="py-24">
 	<div class="grid grid-cols-2 gap-8 md:grid-cols-4">
-		{#each [{ title: 'Music', icon: '🎵', href: 'https://bandcamp.com/yourusername' }, { title: 'Movies', icon: '🎬', href: 'https://letterboxd.com/yourusername' }, { title: 'Gaming', icon: '🎮', href: 'https://steamcommunity.com/id/yourusername' }, { title: 'Social', icon: '💭', href: 'https://bsky.app/profile/yourusername' }] as { title, icon, href }}
+		{#each links as { title, icon, href }}
 			<a
 				{href}
 				target="_blank"
@@ -59,7 +76,7 @@
 			>
 				<time class="text-sm text-zinc-500">December {27 + i}, 2023</time>
 				<h3 class="mt-4 text-xl font-semibold group-hover:text-emerald-400">
-					<a href="/blog/post-{i + 1}">Example Blog Post {i + 1}</a>
+					<a href="{base}/blog/post-{i + 1}">Example Blog Post {i + 1}</a>
 				</h3>
 				<p class="mt-2 text-zinc-400">
 					This is a placeholder for your blog post excerpt. Replace this with actual content from
@@ -70,7 +87,7 @@
 	</div>
 	<div class="mt-12 text-center">
 		<a
-			href="/blog"
+			href="{base}/blog"
 			class="inline-block rounded-lg border border-emerald-500 px-6 py-2 text-emerald-400 transition-all hover:bg-emerald-500 hover:text-zinc-900"
 		>
 			View All Posts
