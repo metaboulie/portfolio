@@ -26,11 +26,38 @@ jobs:
         with:
           node-version: 20
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: false
+
+      - name: Clean install artifacts
+        run: |
+          rm -rf node_modules
+          rm -f package-lock.json
+          rm -f pnpm-lock.yaml
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
       - name: Install dependencies
-        run: npm install
+        run: |
+          pnpm install
+          pnpm store prune
 
       - name: Build
-        run: npm run build
+        run: pnpm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
