@@ -9,15 +9,7 @@ const config = {
 	preprocess: [
 		vitePreprocess(),
 		mdsvex({
-			extensions: ['.md', '.svx'],
-			highlight: {
-				highlighter(code, lang = 'text') {
-					if (lang === 'math') {
-						return `<div class="math-block">${code}</div>`;
-					}
-					return `<pre class="language-${lang}"><code>${code}</code></pre>`;
-				}
-			}
+			extensions: ['.md', '.svx']
 		})
 	],
 
