@@ -1,7 +1,11 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex } from 'mdsvex';
-import * as shiki from 'shiki';
+import { getHighlighter } from 'shiki';
+
+const shikiHighlighter = await getHighlighter({
+	theme: 'nord'
+});
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -12,22 +16,8 @@ const config = {
 		mdsvex({
 			extensions: ['.md', '.svx'],
 			highlight: {
-				async highlighter(code, lang) {
-					const highlighter = await shiki.getHighlighter({
-						theme: 'nord',
-						langs: [
-							'javascript',
-							'typescript',
-							'svelte',
-							'html',
-							'css',
-							'json',
-							'markdown',
-							'bash',
-							'yaml'
-						]
-					});
-					return highlighter.codeToHtml(code, { lang });
+				highlighter(code, lang) {
+					return shikiHighlighter.codeToHtml(code, { lang });
 				}
 			}
 		})
