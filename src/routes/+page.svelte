@@ -3,15 +3,38 @@
 	import { base } from '$app/paths';
 
 	let mounted = false;
+	let codeVisible = false;
+
 	onMount(() => {
 		mounted = true;
+		setTimeout(() => {
+			codeVisible = true;
+		}, 500);
 	});
 
 	const links = [
-		{ title: 'Music', icon: '🎵', href: 'https://bandcamp.com/metaboulie' },
-		{ title: 'Movies', icon: '🎬', href: 'https://letterboxd.com/metaboulie' },
-		{ title: 'Gaming', icon: '🎮', href: 'https://steamcommunity.com/id/metaboulie' },
-		{ title: 'Social', icon: '💭', href: 'https://bsky.app/profile/metaboulie' }
+		{ title: 'Music', icon: '🎵', href: 'https://rateyourmusic.com/~rowanBlake' },
+		{ title: 'Movies', icon: '🎬', href: 'https://letterboxd.com/nycide/' },
+		{ title: 'Gaming', icon: '🎮', href: 'https://steamcommunity.com/id/metaboulie/' },
+		{ title: 'Social', icon: '💭', href: 'https://bsky.app/profile/metaboulie.bsky.social' }
+	];
+
+	const codeLines = [
+		{ text: 'while (alive) {', classes: ['text-purple-400', 'text-zinc-500', 'text-red-400'] },
+		{
+			text: '    music (nightclub syndrome)',
+			classes: ['typing-1', 'text-gray-400']
+		},
+		{
+			text: '    read (corrupted literature)',
+			classes: ['typing-2', 'text-emerald-400']
+		},
+		{
+			text: '    dream (of blue, the absent afterglow)',
+			classes: ['typing-3', 'text-blue-300']
+		},
+		{ text: '}', classes: ['text-zinc-500'] },
+		{ text: 'end', classes: ['text-purple-400'] }
 	];
 </script>
 
@@ -21,25 +44,37 @@
 		<div class="mb-8 flex justify-center">
 			<img
 				src="{base}/avatar.png"
-				alt="Eugene's avatar"
+				alt="métaboulie's avatar"
 				class="h-32 w-32 rounded-full border-2 border-zinc-800"
 				width="128"
 				height="128"
 			/>
 		</div>
-		<h1
-			class="mb-6 bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-6xl font-bold text-transparent transition-all duration-500"
+		<div
+			class="mb-6 transition-all duration-500"
 			class:translate-y-0={mounted}
 			class:-translate-y-8={!mounted}
 		>
-			Code is the silence of thought made visible
-		</h1>
+			<pre
+				class="inline-block rounded-lg border border-zinc-800 bg-zinc-900/50 p-12 text-left font-mono"><code
+					class="text-lg"
+					>{#each codeLines as line}<span
+							class="{line.classes.join(' ')} {line.classes.includes('typing-1') ||
+							line.classes.includes('typing-2') ||
+							line.classes.includes('typing-3')
+								? 'opacity-0'
+								: ''}"
+							class:opacity-100={codeVisible}
+							>{line.text}
+</span>{/each}</code
+				></pre>
+		</div>
 		<p
 			class="mx-auto max-w-2xl text-lg text-zinc-400 transition-all delay-200 duration-500"
 			class:translate-y-0={mounted}
 			class:-translate-y-8={!mounted}
 		>
-			Exploring the intersections of AI, philosophy, and music through code and creativity.
+			Decoding the dark undercurrents of thought—AI, philosophy, and music as fractured reflections.
 		</p>
 	</div>
 	<div class="absolute inset-0 -z-10">
@@ -101,5 +136,26 @@
 	}
 	section:last-child {
 		@apply border-b-0;
+	}
+
+	.typing-1 {
+		animation: fadeIn 0.5s ease-out 0.8s forwards;
+	}
+	.typing-2 {
+		animation: fadeIn 0.5s ease-out 1.2s forwards;
+	}
+	.typing-3 {
+		animation: fadeIn 0.5s ease-out 1.6s forwards;
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(10px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
 </style>

@@ -10,12 +10,12 @@
 			<a href="{base}/" class="flex items-center gap-3">
 				<img
 					src="{base}/avatar.png"
-					alt="Eugene's avatar"
+					alt="métaboulie's avatar"
 					class="h-8 w-8 rounded-full border border-zinc-800"
 					width="32"
 					height="32"
 				/>
-				<span class="text-xl font-bold">Eugene</span>
+				<span class="text-xl font-bold">métaboulie</span>
 			</a>
 			<div class="flex gap-6">
 				<a href="{base}/" class="hover:text-emerald-400">Home</a>
@@ -28,7 +28,7 @@
 				>
 					GitHub
 				</a>
-				<a href="mailto:your@email.com" class="hover:text-emerald-400">Contact</a>
+				<a href="mailto:heinereugene@pm.me" class="hover:text-emerald-400">Contact</a>
 			</div>
 		</nav>
 	</header>
@@ -39,7 +39,7 @@
 
 	<footer class="mt-32 border-t border-zinc-800 py-8">
 		<div class="mx-auto max-w-7xl px-4 text-center text-sm text-zinc-400">
-			<p>© {new Date().getFullYear()} Eugene. All rights reserved.</p>
+			<p>© {new Date().getFullYear()} métaboulie. All rights reserved.</p>
 		</div>
 	</footer>
 </div>
