@@ -14,7 +14,18 @@ const config = {
 			highlight: {
 				async highlighter(code, lang) {
 					const highlighter = await shiki.getHighlighter({
-						theme: 'nord'
+						theme: 'nord',
+						langs: [
+							'javascript',
+							'typescript',
+							'svelte',
+							'html',
+							'css',
+							'json',
+							'markdown',
+							'bash',
+							'yaml'
+						]
 					});
 					return highlighter.codeToHtml(code, { lang });
 				}

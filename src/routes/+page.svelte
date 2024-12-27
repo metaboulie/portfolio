@@ -28,7 +28,7 @@
 	<div class="absolute inset-0 -z-10">
 		<div
 			class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-zinc-800/20 via-zinc-900 to-zinc-900"
-		/>
+		></div>
 	</div>
 </section>
 
