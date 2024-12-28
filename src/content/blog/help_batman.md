@@ -1,7 +1,7 @@
 ---
 title: help batman
 date: "2024-12-29"
-description: This blog talks about how to help batman in your terminal
+description: this blog talks about how to help batman in your terminal
 ---
 
 # This started from brew leaves
@@ -26,11 +26,10 @@ Ok. Let's do a quick test first, how many formalae I can remember atm, and they 
 
 ruff, uv, pypy, hatch (Oh yeah, my mind is filled with python), zig, rust, nvim 👫
 emacs, and some cli tools I used a lot: eza, zoxide, lazygit, yazi. I think that's all.
-Let's check the result
+Let's check the result 🤓
 
 ```fish
 brew leaves -r | wc -l
-
 λ> 41
 
 brew leaves -r
@@ -42,13 +41,12 @@ And wait... no uv?
 
 ```fish
 brew uses --installed uv
-
 λ> hatch
 ```
 
-That's fair.
+That's fair 😎
 
-So, why not make a blog about every single one of them.
+So, why not make a blog about every single one of them. (a really boring idea)
 
 And this starts with the one and the only one:
 
@@ -61,11 +59,11 @@ brew home bat
 ```
 
 At first, I thought I could just uninstall this formula -- it seemed just to be a
-pretty-printer.
+pretty-printer, and I could just use neovim.
 
-But I find a pretty brilliant useage of bat, and I'm excited.
+But I find a pretty brilliant useage of bat.
 
-So, what do you expect the following function would do? (It's an alias)
+So, what do you expect the following function would do? (It's an alias for fish shell)
 
 ```fish
 function help
@@ -80,14 +78,13 @@ It's using bat to highlight `--help` messages. For example, `help brew` is equal
 What's more, I should be inspired by this. Basically, I suppose, whenever we output
 something in the command line, we can pipe this output to bat and view it prettier.
 
-Here is another example (We are using [fd](#fd) here, which will be talked about
-later.)
-
 ```fish
 function df
     fd . --type file | xargs bat --diff
 end
 ```
+
+- [fd](https://github.com/sharkdp/fd)
 
 Now, when running `df`, the command will recursively find all files in the current
 directory and show their diffs in a single, nicely formatted output.
@@ -113,7 +110,7 @@ There aren't many to be configured. For me, it's just:
 <div class="callout">
   <div class="callout-title">💡 Tip</div>
   <div class="callout-content">
-    From now on, we can use the customized <strong>help</strong> command to view the help message of other formulae.
+    From now on, we can use the customized <strong>help</strong> command to view the help messages of other formulae.
   </div>
 </div>
 
@@ -151,15 +148,14 @@ The `fish -c` command is particularly useful because:
 - It properly handles command substitution and variable expansion[1]
 
 This approach is more reliable than direct command execution because it ensures
-consistent behavior across both external commands and fish builtins. The `2>&1`
-redirection captures both standard output and error messages, ensuring all help text is
-properly piped to `bat` for formatting.
+consistent behavior across both external commands and fish builtins.
+
+The `2>&1` redirection captures both standard output and error messages, ensuring all
+help text is properly piped to `bat` for formatting.
 
 ---
 
-# Appendix
-
-## Bat-extras
+# Bat-extras
 
 A typical step after learning about a formula for me might be the following:
 
