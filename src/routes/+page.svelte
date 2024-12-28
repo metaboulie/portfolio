@@ -59,11 +59,7 @@
 				class="inline-block rounded-lg border border-zinc-800 bg-zinc-900/50 p-12 text-left font-mono"><code
 					class="text-lg"
 					>{#each codeLines as line}<span
-							class="{line.classes.join(' ')} {line.classes.includes('typing-1') ||
-							line.classes.includes('typing-2') ||
-							line.classes.includes('typing-3')
-								? 'opacity-0'
-								: ''}"
+							class="{line.classes.join(' ')}"
 							class:opacity-100={codeVisible}
 							>{line.text}
 </span>{/each}</code
@@ -74,7 +70,7 @@
 			class:translate-y-0={mounted}
 			class:-translate-y-8={!mounted}
 		>
-			Decoding the dark undercurrents of thought—AI, philosophy, and music as fractured reflections.
+			I know nothing about front-end development. I have no idea what the hell I'm doing. This website is a disaster. I'm sorry. 
 		</p>
 	</div>
 	<div class="absolute inset-0 -z-10">
@@ -101,51 +97,12 @@
 	</div>
 </section>
 
-<!-- Blog Preview Section -->
-<section class="py-24">
-	<h2 class="mb-12 text-3xl font-bold">Latest Thoughts</h2>
-	<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-		{#each Array(3) as _, i}
-			<article
-				class="group rounded-lg border border-zinc-800 p-6 transition-all hover:border-emerald-500/50"
-			>
-				<time class="text-sm text-zinc-500">December {27 + i}, 2023</time>
-				<h3 class="mt-4 text-xl font-semibold group-hover:text-emerald-400">
-					<a href="{base}/blog/post-{i + 1}">Example Blog Post {i + 1}</a>
-				</h3>
-				<p class="mt-2 text-zinc-400">
-					This is a placeholder for your blog post excerpt. Replace this with actual content from
-					your markdown files.
-				</p>
-			</article>
-		{/each}
-	</div>
-	<div class="mt-12 text-center">
-		<a
-			href="{base}/blog"
-			class="inline-block rounded-lg border border-emerald-500 px-6 py-2 text-emerald-400 transition-all hover:bg-emerald-500 hover:text-zinc-900"
-		>
-			View All Posts
-		</a>
-	</div>
-</section>
-
 <style>
 	section {
 		@apply border-b border-zinc-800;
 	}
 	section:last-child {
 		@apply border-b-0;
-	}
-
-	.typing-1 {
-		animation: fadeIn 0.5s ease-out 0.8s forwards;
-	}
-	.typing-2 {
-		animation: fadeIn 0.5s ease-out 1.2s forwards;
-	}
-	.typing-3 {
-		animation: fadeIn 0.5s ease-out 1.6s forwards;
 	}
 
 	@keyframes fadeIn {
