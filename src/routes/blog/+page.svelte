@@ -25,7 +25,7 @@
 							day: 'numeric'
 						})}</time
 					>
-					<h2 class="mt-6 text-3xl font-bold tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-emerald-400 group-hover:to-purple-500 transition-all duration-300">
+					<h2 class="mt-6 text-3xl font-bold tracking-tight group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-emerald-400 group-hover:to-purple-500 transition-all duration-300">
 						<a href="{base}/blog/{post.slug}" class="relative inline-block">
 							<span class="relative z-10">{post.title}</span>
 							<span class="absolute inset-x-0 bottom-0 h-0.5 bg-emerald-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
