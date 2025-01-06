@@ -23,7 +23,10 @@ export const load: PageLoad = async () => {
 
     return {
         posts: posts
-            .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+            .sort(
+                (a, b) =>
+                    new Date(b.date).getTime() - new Date(a.date).getTime(),
+            )
             .map((post) => ({
                 slug: post.slug,
                 title: post.title,

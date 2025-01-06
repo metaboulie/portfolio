@@ -3,73 +3,73 @@
 @tailwind utilities;
 
 @layer base {
-	html {
-		@apply scroll-smooth antialiased;
-	}
+    html {
+        @apply scroll-smooth antialiased;
+    }
 
-	/* Shiki code blocks */
-	pre {
-		@apply my-4 overflow-x-auto rounded-lg border border-zinc-800 bg-zinc-900/50 p-4 text-sm;
-	}
+    /* Shiki code blocks */
+    pre {
+        @apply my-4 overflow-x-auto rounded-lg border border-zinc-800 bg-zinc-900/50 p-4 text-sm;
+    }
 
-	pre code {
-		@apply block bg-transparent p-0;
-	}
+    pre code {
+        @apply block bg-transparent p-0;
+    }
 
-	:not(pre) > code {
-		@apply rounded bg-zinc-800 px-1.5 py-0.5 text-sm text-emerald-400;
-	}
+    :not(pre) > code {
+        @apply rounded bg-zinc-800 px-1.5 py-0.5 text-sm text-emerald-400;
+    }
 
-	/* Custom scrollbar */
-	::-webkit-scrollbar {
-		@apply w-2;
-	}
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+        @apply w-2;
+    }
 
-	::-webkit-scrollbar-track {
-		@apply bg-zinc-900;
-	}
+    ::-webkit-scrollbar-track {
+        @apply bg-zinc-900;
+    }
 
-	::-webkit-scrollbar-thumb {
-		@apply rounded-full bg-zinc-700;
-	}
+    ::-webkit-scrollbar-thumb {
+        @apply rounded-full bg-zinc-700;
+    }
 
-	::-webkit-scrollbar-thumb:hover {
-		@apply bg-zinc-600;
-	}
+    ::-webkit-scrollbar-thumb:hover {
+        @apply bg-zinc-600;
+    }
 
-	/* Shiki theme overrides */
-	.shiki {
-		@apply bg-transparent text-zinc-100;
-		font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
-			'Courier New', monospace;
-	}
+    /* Shiki theme overrides */
+    .shiki {
+        @apply bg-transparent text-zinc-100;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+            "Liberation Mono", "Courier New", monospace;
+    }
 
-	.shiki .line {
-		@apply min-h-[1.5rem] whitespace-pre;
-	}
+    .shiki .line {
+        @apply min-h-[1.5rem] whitespace-pre;
+    }
 
-	.shiki .line:empty::after {
-		content: '\00a0';
-	}
+    .shiki .line:empty::after {
+        content: "\00a0";
+    }
 
-	/* Nord theme color overrides */
-	.shiki .function {
-		@apply text-blue-400;
-	}
+    /* Nord theme color overrides */
+    .shiki .function {
+        @apply text-blue-400;
+    }
 
-	.shiki .string {
-		@apply text-emerald-400;
-	}
+    .shiki .string {
+        @apply text-emerald-400;
+    }
 
-	.shiki .comment {
-		@apply text-zinc-500;
-	}
+    .shiki .comment {
+        @apply text-zinc-500;
+    }
 
-	.shiki .keyword {
-		@apply text-purple-400;
-	}
+    .shiki .keyword {
+        @apply text-purple-400;
+    }
 
-	.shiki .number {
-		@apply text-orange-400;
-	}
+    .shiki .number {
+        @apply text-orange-400;
+    }
 }

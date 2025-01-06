@@ -26,7 +26,11 @@ const config = {
             highlight: {
                 highlighter: async (code, lang = "text") => {
                     const highlighter = await getHighlighter();
-                    await highlighter.loadLanguage("typescript", "svelte", "fish");
+                    await highlighter.loadLanguage(
+                        "typescript",
+                        "svelte",
+                        "fish",
+                    );
                     const html = escapeSvelte(
                         highlighter.codeToHtml(code, { lang, theme: "nord" }),
                     );
