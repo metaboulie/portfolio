@@ -39,7 +39,7 @@
 
 	<footer class="mt-32 border-t border-zinc-800 py-8">
 		<div class="mx-auto max-w-7xl px-4 text-center text-sm text-zinc-400">
-			<p>© {new Date().getFullYear()} métaboulie. All rights reserved.</p>
+			<p>© {new Date().getFullYear()} métaboulie. No rights reserved.</p>
 		</div>
 	</footer>
 </div>
