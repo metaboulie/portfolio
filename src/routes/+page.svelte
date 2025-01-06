@@ -70,7 +70,7 @@
 			class:translate-y-0={mounted}
 			class:-translate-y-8={!mounted}
 		>
-			I know nothing about front-end development. I have no idea what the hell I'm doing. This website is a disaster. I'm sorry. 
+			CEO of Bluest and Metaphysical Computing.
 		</p>
 	</div>
 	<div class="absolute inset-0 -z-10">
