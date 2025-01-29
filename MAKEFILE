@@ -1,0 +1,23 @@
+.PHONY: help blog
+
+# Default target
+help:
+	@echo "Available commands:"
+	@echo "  make blog title=\"Your Title\" desc=\"Your Description\" - Create a new blog post"
+	@echo "  make help                                               - Show this help message"
+
+# Create a new blog post
+# Usage: make blog title="Your Title" desc="Your Description"
+blog:
+	@if [ -z "$(title)" ]; then \
+		echo "Error: title is required. Usage: make blog title=\"Your Title\" desc=\"Your Description\""; \
+		exit 1; \
+	fi
+	@if [ -z "$(desc)" ]; then \
+		echo "Error: desc is required. Usage: make blog title=\"Your Title\" desc=\"Your Description\""; \
+		exit 1; \
+	fi
+	@filename=$$(echo "$(title)" | tr '[:upper:]' '[:lower:]' | sed 's/ /_/g'); \
+	date=$$(date +%Y-%m-%d); \
+	echo "---\ntitle: $(title)\ndate: \"$$date\"\ndescription: $(desc)\n---" > "src/content/blog/+$$filename.md"
+	@echo "Created new blog post: src/content/blog/+$$filename.md"
